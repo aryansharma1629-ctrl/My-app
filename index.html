@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#155eef">
+<title>ClassPulse — Coaching Class Manager</title>
+<style>
+:root{--blue:#155eef;--blue-dark:#1248c5;--blue-light:#eff6ff;--ink:#172b4d;--muted:#667085;--line:#e4eaf2;--bg:#f5f8fc;--white:#fff;--green:#15803d;--amber:#b45309;--red:#b42318;--shadow:0 8px 24px rgba(20,50,90,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1200px;margin:auto;min-height:100vh}.topbar{background:var(--white);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.5px}.logo{width:38px;height:38px;display:grid;place-items:center;background:var(--blue);color:#fff;border-radius:12px;font-size:20px}.brand small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0}.top-actions{display:flex;gap:8px;align-items:center}.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:22px;padding:22px 18px}.sidebar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;height:max-content;position:sticky;top:82px}.navbtn{width:100%;border:0;background:transparent;padding:12px 13px;border-radius:10px;text-align:left;color:#475467;font-weight:650;margin:2px 0;display:flex;gap:11px;align-items:center}.navbtn.active,.navbtn:hover{background:var(--blue-light);color:var(--blue)}.navbtn .ico{width:22px;text-align:center;font-size:17px}.main{min-width:0}.welcome{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin:2px 0 20px}.welcome h1{font-size:26px;letter-spacing:-.7px;margin:0 0 4px}.muted{color:var(--muted)}.small{font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.stat,.panel,.card{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.stat{padding:16px}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;gap:5px}.stat-icon{width:34px;height:34px;display:grid;place-items:center;background:var(--blue-light);border-radius:10px;font-size:17px}.stat strong{font-size:27px;display:block;margin:9px 0 0;letter-spacing:-.7px}.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel{padding:18px;margin-bottom:16px;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.panel h2,.section-title{font-size:17px;margin:0;letter-spacing:-.2px}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:9px 12px;font-weight:650;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:var(--blue-dark)}.btn.danger{color:var(--red);border-color:#f2c9c6}.btn.smallbtn{padding:6px 9px;font-size:12px}.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #a7c5ff;outline-offset:2px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:12px 9px;border-bottom:1px solid #edf0f5;white-space:nowrap}th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:750}tbody tr:last-child td{border-bottom:0}.person{display:flex;align-items:center;gap:9px}.avatar{width:34px;height:34px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:#e5efff;color:#155eef;font-weight:800;font-size:12px}.badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:750;background:#f2f4f7;color:#475467}.badge.green{background:#dcfce7;color:#166534}.badge.amber{background:#fef3c7;color:#92400e}.badge.blue{background:#dbeafe;color:#1d4ed8}.badge.red{background:#fee4e2;color:#b42318}.list{display:grid;gap:10px}.list-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #edf0f5}.list-item:last-child{border-bottom:0;padding-bottom:0}.list-icon{width:36px;height:36px;border-radius:10px;background:#eff6ff;display:grid;place-items:center;flex-shrink:0}.list-content{min-width:0;flex:1}.list-content strong{display:block;font-size:13px}.list-content p{font-size:12px;color:var(--muted);margin:3px 0 0;overflow-wrap:anywhere}.view{display:none}.view.active{display:block}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.field{display:grid;gap:5px;margin-bottom:13px}.field label{font-size:13px;font-weight:700;color:#344054}.field input,.field select,.field textarea,.search{width:100%;padding:11px 12px;border:1px solid #d0d7e2;border-radius:10px;background:#fff;color:var(--ink);min-width:0}.field textarea{min-height:90px;resize:vertical}.search{flex:1;min-width:150px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{padding:15px}.card-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.card h3{font-size:15px;margin:0 0 5px;overflow-wrap:anywhere}.card p{font-size:13px;color:var(--muted);margin:7px 0;overflow-wrap:anywhere}.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.empty{padding:28px 14px;text-align:center;color:var(--muted);border:1px dashed #d0d7e2;border-radius:12px}.empty strong{display:block;color:var(--ink);margin-bottom:4px}.notice{border-radius:11px;padding:12px 14px;background:#eff6ff;color:#1e40af;font-size:13px;margin-bottom:15px}.notice.warn{background:#fffaeb;color:#92400e}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.form-grid .full{grid-column:1/-1}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,18px);background:#172b4d;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 10px 35px #0002;z-index:20;opacity:0;pointer-events:none;transition:.2s;max-width:calc(100% - 28px);font-size:14px}.toast.show{opacity:1;transform:translate(-50%,0)}.footer{text-align:center;color:var(--muted);font-size:11px;padding:0 16px 25px}.hidden{display:none!important}.test-date{font-weight:750;color:var(--blue)}.subnav{display:none}
+@media(max-width:850px){.layout{grid-template-columns:1fr;padding:15px 12px 86px;gap:15px}.sidebar{position:fixed;top:auto;bottom:0;left:0;right:0;z-index:10;border-radius:16px 16px 0 0;border-bottom:0;padding:7px 4px calc(7px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;gap:2px;box-shadow:0 -6px 24px #102a4a10}.navbtn{width:auto;flex:1;display:flex;flex-direction:column;gap:3px;padding:7px 2px;margin:0;text-align:center;font-size:10px;border-radius:9px}.navbtn .ico{font-size:18px}.topbar{padding:11px 13px}.brand{font-size:18px}.logo{width:35px;height:35px}.top-actions .btn{padding:8px 9px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:13px}.stat strong{font-size:25px}.grid2{grid-template-columns:1fr}.welcome h1{font-size:23px}.panel{padding:14px}.subnav{display:block}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.welcome{align-items:center}.welcome .btn{white-space:nowrap}.stats .stat-top{font-size:12px}.toolbar>*{flex:1}.toolbar .search{flex-basis:100%}.table-wrap table{min-width:500px}.top-actions .reset-label{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">✦</div><div>ClassPulse<small>Coaching, made simpler</small></div></div>
+  <div class="top-actions"><button class="btn" id="exportBtn" type="button" title="Download a JSON backup">↧ <span class="reset-label">Export demo</span></button><button class="btn danger" id="resetBtn" type="button">↻ <span class="reset-label">Reset demo</span></button></div>
+</header>
+<div class="layout">
+<nav class="sidebar" aria-label="Main navigation">
+  <button class="navbtn active" data-view="dashboard"><span class="ico">▦</span>Dashboard</button>
+  <button class="navbtn" data-view="students"><span class="ico">♙</span>Students</button>
+  <button class="navbtn" data-view="homework"><span class="ico">▤</span>Homework</button>
+  <button class="navbtn" data-view="doubts"><span class="ico">☏</span>Doubts</button>
+  <button class="navbtn" data-view="tests"><span class="ico">◷</span>Tests</button>
+</nav>
+<main class="main">
+<section class="view active" id="view-dashboard">
+ <div class="welcome"><div><h1>Good to see you! 👋</h1><div class="muted">Here's what's happening in your class today.</div></div><button class="btn primary" data-go="homework">＋ Add homework</button></div>
+ <div class="stats">
+  <div class="stat"><div class="stat-top">Total students <span class="stat-icon">♙</span></div><strong id="statStudents">0</strong><div class="muted small">In your demo class</div></div>
+  <div class="stat"><div class="stat-top">Pending homework <span class="stat-icon">▤</span></div><strong id="statHomework">0</strong><div class="muted small">Needs completion</div></div>
+  <div class="stat"><div class="stat-top">Open doubts <span class="stat-icon">☏</span></div><strong id="statDoubts">0</strong><div class="muted small">Awaiting a reply</div></div>
+  <div class="stat"><div class="stat-top">Upcoming tests <span class="stat-icon">◷</span></div><strong id="statTests">0</strong><div class="muted small">Scheduled tests</div></div>
+ </div>
+ <div class="grid2">
+  <div class="panel"><div class="panel-head"><h2>Recent homework</h2><button class="btn smallbtn" data-go="homework">View all →</button></div><div id="dashHomework" class="list"></div></div>
+  <div class="panel"><div class="panel-head"><h2>Upcoming tests</h2><button class="btn smallbtn" data-go="tests">View all →</button></div><div id="dashTests" class="list"></div></div>
+ </div>
+ <div class="panel"><div class="panel-head"><h2>Latest student doubts</h2><button class="btn smallbtn" data-go="doubts">Manage doubts →</button></div><div id="dashDoubts" class="list"></div></div>
+ <div class="notice warn">Demo only: data is saved in this browser on this device. It is not a secure student database and does not sync to other devices.</div>
+</section>
+<section class="view" id="view-students">
+ <div class="welcome"><div><h1>Students</h1><div class="muted">Keep your class roster in one place.</div></div><button class="btn primary" id="showStudentForm">＋ Add student</button></div>
+ <div id="studentFormPanel" class="panel hidden"><div class="panel-head"><h2>Add a student</h2><button class="btn smallbtn" data-close="studentFormPanel">Cancel</button></div><form id="studentForm" novalidate><div class="form-grid">
+  <div class="field"><label for="studentName">Full name *</label><input id="studentName" maxlength="70" required placeholder="e.g. Aditi Sharma"></div>
+  <div class="field"><label for="studentClass">Class / batch *</label><input id="studentClass" maxlength="40" required placeholder="e.g. Class 10 - Maths"></div>
+  <div class="field"><label for="studentPhone">Phone (optional)</label><input id="studentPhone" inputmode="tel" maxlength="15" placeholder="Demo number only"></div>
+  <div class="field"><label for="studentEmail">Email (optional)</label><input id="studentEmail" type="email" maxlength="100" placeholder="student@example.com"></div>
+  <div class="full"><button class="btn primary" type="submit">Save student</button></div>
+ </div></form></div>
+ <div class="panel"><div class="toolbar"><input id="studentSearch" class="search" placeholder="Search name, batch or email…" aria-label="Search students"><select id="studentClassFilter" aria-label="Filter students by class" class="search"><option value="">All classes</option></select></div><div id="studentList"></div></div>
+</section>
+<section class="view" id="view-homework">
+ <div class="welcome"><div><h1>Homework</h1><div class="muted">Create tasks and track completion.</div></div><button class="btn primary" id="showHomeworkForm">＋ Add task</button></div>
+ <div id="homeworkFormPanel" class="panel hidden"><div class="panel-head"><h2>New homework task</h2><button class="btn smallbtn" data-close="homeworkFormPanel">Cancel</button></div><form id="homeworkForm" novalidate><div class="form-grid">
+  <div class="field"><label for="hwTitle">Task title *</label><input id="hwTitle" maxlength="100" required placeholder="e.g. Algebra exercise 4"></div>
+  <div class="field"><label for="hwSubject">Subject *</label><input id="hwSubject" maxlength="50" required placeholder="e.g. Mathematics"></div>
+  <div class="field"><label for="hwDue">Due date *</label><input id="hwDue" type="date" required></div>
+  <div class="field"><label for="hwAssignee">Assign to *</label><select id="hwAssignee" required><option value="all">All students</option></select></div>
+  <div class="field full"><label for="hwDescription">Instructions (optional)</label><textarea id="hwDescription" maxlength="500" placeholder="What should students complete?"></textarea></div>
+  <div class="full"><button class="btn primary" type="submit">Create homework</button></div>
+ </div></form></div>
+ <div class="panel"><div class="toolbar"><input class="search" id="homeworkSearch" placeholder="Search homework…" aria-label="Search homework"><select class="search" id="homeworkFilter" aria-label="Filter homework"><option value="">All statuses</option><option value="pending">Pending</option><option value="completed">Completed</option></select></div><div id="homeworkList" class="cards"></div></div>
+</section>
+<section class="view" id="view-doubts">
+ <div class="welcome"><div><h1>Student doubts</h1><div class="muted">Record questions and update their status.</div></div><button class="btn primary" id="showDoubtForm">＋ Add doubt</button></div>
+ <div class="notice">Sample submissions are created by the teacher in this demo. Students cannot submit remotely because there is no login or server.</div>
+ <div id="doubtFormPanel" class="panel hidden"><div class="panel-head"><h2>Record a student doubt</h2><button class="btn smallbtn" data-close="doubtFormPanel">Cancel</button></div><form id="doubtForm" novalidate><div class="form-grid">
+  <div class="field"><label for="doubtStudent">Student *</label><select id="doubtStudent" required></select></div>
+  <div class="field"><label for="doubtSubject">Subject *</label><input id="doubtSubject" maxlength="50" required placeholder="e.g. Physics"></div>
+  <div class="field full"><label for="doubtQuestion">Question / doubt *</label><textarea id="doubtQuestion" maxlength="600" required placeholder="Write the question here…"></textarea></div>
+  <div class="full"><button class="btn primary" type="submit">Save doubt</button></div>
+ </div></form></div>
+ <div class="panel"><div class="toolbar"><input class="search" id="doubtSearch" placeholder="Search doubts or student…" aria-label="Search doubts"><select class="search" id="doubtFilter" aria-label="Filter doubts"><option value="">All statuses</option><option value="open">Open</option><option value="in-progress">In progress</option><option value="resolved">Resolved</option></select></div><div id="doubtList" class="cards"></div></div>
+</section>
+<section class="view" id="view-tests">
+ <div class="welcome"><div><h1>Tests & exams</h1><div class="muted">See upcoming assessments and dates.</div></div><button class="btn primary" id="showTestForm">＋ Add test</button></div>
+ <div id="testFormPanel" class="panel hidden"><div class="panel-head"><h2>Schedule a test</h2><button class="btn smallbtn" data-close="testFormPanel">Cancel</button></div><form id="testForm" novalidate><div class="form-grid">
+  <div class="field"><label for="testTitle">Test name *</label><input id="testTitle" maxlength="100" required placeholder="e.g. Chapter 3 test"></div>
+  <div class="field"><label for="testSubject">Subject *</label><input id="testSubject" maxlength="50" required placeholder="e.g. Science"></div>
+  <div class="field"><label for="testDate">Test date *</label><input id="testDate" type="date" required></div>
+  <div class="field"><label for="testTime">Time (optional)</label><input id="testTime" type="time"></div>
+  <div class="field full"><label for="testNotes">Notes (optional)</label><textarea id="testNotes" maxlength="300" placeholder="Syllabus or instructions…"></textarea></div>
+  <div class="full"><button class="btn primary" type="submit">Schedule test</button></div>
+ </div></form></div>
+ <div class="panel"><div class="toolbar"><input class="search" id="testSearch" placeholder="Search tests…" aria-label="Search tests"><select class="search" id="testFilter" aria-label="Filter tests"><option value="">All dates</option><option value="upcoming">Upcoming</option><option value="past">Past</option></select></div><div id="testList" class="cards"></div></div>
+</section>
+</main></div>
+<footer class="footer">ClassPulse demo • Built with HTML, CSS & JavaScript • No account or cloud sync</footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+const KEY='classpulse-demo-v1';
+const $=id=>document.getElementById(id);
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const addDays=n=>{const d=new Date();d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate=s=>{if(!s)return 'No date';const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+function demoData(){return {students:[
+{id:'s1',name:'Aditi Sharma',className:'Class 10 - Maths',phone:'9000000001',email:'aditi.demo@example.com'},
+{id:'s2',name:'Rohan Verma',className:'Class 10 - Maths',phone:'9000000002',email:'rohan.demo@example.com'},
+{id:'s3',name:'Meera Patel',className:'Class 9 - Science',phone:'9000000003',email:'meera.demo@example.com'},
+{id:'s4',name:'Arjun Singh',className:'Class 9 - Science',phone:'9000000004',email:'arjun.demo@example.com'},
+{id:'s5',name:'Sara Khan',className:'Class 10 - Maths',phone:'9000000005',email:'sara.demo@example.com'}],
+homework:[
+{id:'h1',title:'Algebra practice — Exercise 4',subject:'Mathematics',due:addDays(2),assignee:'all',description:'Complete questions 1–10 in your notebook.',status:'pending',created:Date.now()-300000},
+{id:'h2',title:'Chapter 2 summary',subject:'Science',due:addDays(4),assignee:'s3',description:'Write a short summary of the chapter.',status:'pending',created:Date.now()-200000},
+{id:'h3',title:'English grammar worksheet',subject:'English',due:addDays(-1),assignee:'all',description:'Complete the tenses worksheet.',status:'completed',created:Date.now()-100000}],
+doubts:[
+{id:'d1',studentId:'s2',subject:'Mathematics',question:'Why do we change the sign when moving a term across the equals sign?',status:'open',created:Date.now()-60000},
+{id:'d2',studentId:'s3',subject:'Science',question:'Can you explain the difference between mass and weight?',status:'in-progress',created:Date.now()-40000},
+{id:'d3',studentId:'s1',subject:'Mathematics',question:'How do I factorise this quadratic expression?',status:'resolved',created:Date.now()-20000}],
+tests:[
+{id:'t1',title:'Algebra Unit Test',subject:'Mathematics',date:addDays(3),time:'10:00',notes:'Chapters 1–3'},
+{id:'t2',title:'Science Chapter Test',subject:'Science',date:addDays(7),time:'11:30',notes:'Chapter 2 and diagrams'},
+{id:'t3',title:'English Weekly Quiz',subject:'English',date:addDays(12),time:'09:00',notes:'Grammar and vocabulary'}]}};
+let data,toastTimer;
+function loadData(){try{const raw=localStorage.getItem(KEY);if(!raw)return demoData();const parsed=JSON.parse(raw);if(!parsed||!Array.isArray(parsed.students)||!Array.isArray(parsed.homework)||!Array.isArray(parsed.doubts)||!Array.isArray(parsed.tests))throw Error('Invalid data');return parsed}catch(e){return demoData()}}
+function saveData(){try{localStorage.setItem(KEY,JSON.stringify(data));return true}catch(e){notify('Could not save data. Browser storage may be full or disabled.');return false}}
+function notify(message){const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
+function initials(name){return String(name||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase()}
+function studentName(id){return data.students.find(s=>s.id===id)?.name||'Unknown student'}
+function badge(status){const labels={pending:'Pending',completed:'Completed',open:'Open','in-progress':'In progress',resolved:'Resolved'};const cls={pending:'amber',completed:'green',open:'amber','in-progress':'blue',resolved:'green'};return `<span class="badge ${cls[status]||''}">${labels[status]||escapeHTML(status)}</span>`}
+function empty(title,desc){return `<div class="empty"><strong>${escapeHTML(title)}</strong>${escapeHTML(desc)}</div>`}
+function switchView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===name));window.scrollTo({top:0,behavior:'smooth'});if(name==='students')renderStudents();if(name==='homework')renderHomework();if(name==='doubts')renderDoubts();if(name==='tests')renderTests()}
+function populateSelects(){const oldClass=$('studentClassFilter').value;const classes=[...new Set(data.students.map(s=>s.className).filter(Boolean))].sort();$('studentClassFilter').innerHTML='<option value="">All classes</option>'+classes.map(c=>`<option value="${escapeHTML(c)}">${escapeHTML(c)}</option>`).join('');if(classes.includes(oldClass))$('studentClassFilter').value=oldClass;
+const oldAssignee=$('hwAssignee').value;$('hwAssignee').innerHTML='<option value="all">All students</option>'+data.students.map(s=>`<option value="${escapeHTML(s.id)}">${escapeHTML(s.name)}</option>`).join('');if([...data.students.map(s=>s.id),'all'].includes(oldAssignee))$('hwAssignee').value=oldAssignee;
+const oldDoubt=$('doubtStudent').value;$('doubtStudent').innerHTML=data.students.length?data.students.map(s=>`<option value="${escapeHTML(s.id)}">${escapeHTML(s.name)}</option>`).join(''):'<option value="">Add a student first</option>';if(data.students.some(s=>s.id===oldDoubt))$('doubtStudent').value=oldDoubt;
+$('showDoubtForm').disabled=data.students.length===0;
+}
+function renderDashboard(){ $('statStudents').textContent=data.students.length;$('statHomework').textContent=data.homework.filter(h=>h.status==='pending').length;$('statDoubts').textContent=data.doubts.filter(d=>d.status!=='resolved').length;$('statTests').textContent=data.tests.filter(t=>t.date>=today()).length;
+const hw=[...data.homework].sort((a,b)=>a.due.localeCompare(b.due)).slice(0,4);$('dashHomework').innerHTML=hw.length?hw.map(h=>`<div class="list-item"><div class="list-icon">▤</div><div class="list-content"><strong>${escapeHTML(h.title)}</strong><p>${escapeHTML(h.subject)} · Due ${fmtDate(h.due)}</p></div>${badge(h.status)}</div>`).join(''):empty('No homework yet','Add a task to get started.');
+const ts=data.tests.filter(t=>t.date>=today()).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);$('dashTests').innerHTML=ts.length?ts.map(t=>`<div class="list-item"><div class="list-icon">◷</div><div class="list-content"><strong>${escapeHTML(t.title)}</strong><p>${fmtDate(t.date)}${t.time?' · '+escapeHTML(t.time):''} · ${escapeHTML(t.subject)}</p></div></div>`).join(''):empty('No upcoming tests','Schedule a test to see it here.');
+const ds=[...data.doubts].sort((a,b)=>b.created-a.created).slice(0,3);$('dashDoubts').innerHTML=ds.length?ds.map(d=>`<div class="list-item"><div class="avatar">${escapeHTML(initials(studentName(d.studentId)))}</div><div class="list-content"><strong>${escapeHTML(studentName(d.studentId))} · ${escapeHTML(d.subject)}</strong><p>${escapeHTML(d.question)}</p></div>${badge(d.status)}</div>`).join(''):empty('All clear','No student doubts recorded.')}
+function renderStudents(){const q=$('studentSearch').value.trim().toLowerCase(),cls=$('studentClassFilter').value;const rows=data.students.filter(s=>(!cls||s.className===cls)&&[s.name,s.className,s.email,s.phone].join(' ').toLowerCase().includes(q));$('studentList').innerHTML=rows.length?`<div class="table-wrap"><table><thead><tr><th>Student</th><th>Class / batch</th><th>Contact</th><th>Action</th></tr></thead><tbody>${rows.map(s=>`<tr><td><div class="person"><div class="avatar">${escapeHTML(initials(s.name))}</div><div><strong>${escapeHTML(s.name)}</strong><div class="muted small">${escapeHTML(s.email||'No email')}</div></div></div></td><td>${escapeHTML(s.className)}</td><td>${escapeHTML(s.phone||'—')}</td><td><button class="btn smallbtn" data-delete-student="${escapeHTML(s.id)}">Remove</button></td></tr>`).join('')}</tbody></table></div>`:empty('No students found','Try another search or add a student.')}
+function renderHomework(){const q=$('homeworkSearch').value.trim().toLowerCase(),f=$('homeworkFilter').value;const list=[...data.homework].filter(h=>(!f||h.status===f)&&[h.title,h.subject,h.description,studentName(h.assignee)].join(' ').toLowerCase().includes(q)).sort((a,b)=>b.created-a.created);$('homeworkList').innerHTML=list.length?list.map(h=>`<article class="card"><div class="card-head"><div><h3>${escapeHTML(h.title)}</h3><div class="muted small">${escapeHTML(h.subject)}</div></div>${badge(h.status)}</div><p>${escapeHTML(h.description||'No extra instructions.')}</p><p>📅 Due: <strong>${fmtDate(h.due)}</strong></p><p>♙ Assigned: ${h.assignee==='all'?'All students':escapeHTML(studentName(h.assignee))}</p><div class="card-actions">${h.status==='pending'?`<button class="btn primary smallbtn" data-toggle-homework="${escapeHTML(h.id)}">✓ Mark complete</button>`:`<button class="btn smallbtn" data-toggle-homework="${escapeHTML(h.id)}">↶ Mark pending</button>`}<button class="btn smallbtn" data-delete-homework="${escapeHTML(h.id)}">Delete</button></div></article>`).join(''):empty('No homework found','Add a task or adjust your filters.')}
+function renderDoubts(){const q=$('doubtSearch').value.trim().toLowerCase(),f=$('doubtFilter').value;const list=[...data.doubts].filter(d=>(!f||d.status===f)&&[studentName(d.studentId),d.subject,d.question].join(' ').toLowerCase().includes(q)).sort((a,b)=>b.created-a.created);$('doubtList').innerHTML=list.length?list.map(d=>`<article class="card"><div class="card-head"><div><h3>${escapeHTML(studentName(d.studentId))}</h3><div class="muted small">${escapeHTML(d.subject)} · ${new Date(d.created).toLocaleDateString('en-IN')}</div></div>${badge(d.status)}</div><p>${escapeHTML(d.question)}</p><div class="field"><label for="status-${escapeHTML(d.id)}">Update status</label><select id="status-${escapeHTML(d.id)}" data-doubt-status="${escapeHTML(d.id)}"><option value="open" ${d.status==='open'?'selected':''}>Open</option><option value="in-progress" ${d.status==='in-progress'?'selected':''}>In progress</option><option value="resolved" ${d.status==='resolved'?'selected':''}>Resolved</option></select></div><div class="card-actions"><button class="btn smallbtn" data-delete-doubt="${escapeHTML(d.id)}">Delete doubt</button></div></article>`).join(''):empty('No doubts found','Record a student question to get started.')}
+function renderTests(){const q=$('testSearch').value.trim().toLowerCase(),f=$('testFilter').value;const list=[...data.tests].filter(t=>(!f||(f==='upcoming'?t.date>=today():t.date<today()))&&[t.title,t.subject,t.notes].join(' ').toLowerCase().includes(q)).sort((a,b)=>a.date.localeCompare(b.date));$('testList').innerHTML=list.length?list.map(t=>`<article class="card"><div class="card-head"><div><h3>${escapeHTML(t.title)}</h3><div class="muted small">${escapeHTML(t.subject)}</div></div><span class="badge ${t.date<today()?'':'blue'}">${t.date<today()?'Past test':'Scheduled'}</span></div><p class="test-date">◷ ${fmtDate(t.date)}${t.time?' · '+escapeHTML(t.time):''}</p>${t.notes?`<p>${escapeHTML(t.notes)}</p>`:''}<div class="card-actions"><button class="btn smallbtn" data-delete-test="${escapeHTML(t.id)}">Delete test</button></div></article>`).join(''):empty('No tests found','Schedule a test or adjust your filters.')}
+function renderAll(){populateSelects();renderDashboard();renderStudents();renderHomework();renderDoubts();renderTests()}
+function openForm(id){$(id).classList.remove('hidden');$(id).scrollIntoView({behavior:'smooth',block:'start'})}
+function closeForm(id){$(id).classList.add('hidden')}
+function validText(id,label,min=1){const v=$(id).value.trim();if(v.length<min){$(id).focus();notify(`Please enter ${label}.`);return null}return v}
+function validDate(id,label){const v=$(id).value;if(!v||!/^\d{4}-\d{2}-\d{2}$/.test(v)){ $(id).focus();notify(`Please choose a valid ${label}.`);return null}return v}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.go)));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeForm(b.dataset.close)));
+$('showStudentForm').addEventListener('click',()=>openForm('studentFormPanel'));
+$('showHomeworkForm').addEventListener('click',()=>openForm('homeworkFormPanel'));
+$('showDoubtForm').addEventListener('click',()=>{if(!data.students.length){notify('Add a student first, then record a doubt.');return}openForm('doubtFormPanel')});
+$('showTestForm').addEventListener('click',()=>openForm('testFormPanel'));
+$('studentForm').addEventListener('submit',e=>{e.preventDefault();const name=validText('studentName','the student name'),cls=validText('studentClass','the class or batch');if(!name||!cls)return;const phone=$('studentPhone').value.trim(),email=$('studentEmail').value.trim();if(phone&&!/^[0-9+()\-\s]{7,15}$/.test(phone)){notify('Enter a valid phone number or leave it blank.');$('studentPhone').focus();return}if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){notify('Enter a valid email address or leave it blank.');$('studentEmail').focus();return}data.students.push({id:uid(),name,className:cls,phone,email});saveData();e.target.reset();closeForm('studentFormPanel');renderAll();notify('Student added successfully.')});
+$('homeworkForm').addEventListener('submit',e=>{e.preventDefault();const title=validText('hwTitle','a task title'),subject=validText('hwSubject','a subject'),due=validDate('hwDue','due date');if(!title||!subject||!due)return;if(!$('hwAssignee').value){notify('Please choose who this task is assigned to.');return}data.homework.push({id:uid(),title,subject,due,assignee:$('hwAssignee').value,description:$('hwDescription').value.trim(),status:'pending',created:Date.now()});saveData();e.target.reset();closeForm('homeworkFormPanel');renderAll();notify('Homework created successfully.')});
+$('doubtForm').addEventListener('submit',e=>{e.preventDefault();const studentId=$('doubtStudent').value,subject=validText('doubtSubject','a subject'),question=validText('doubtQuestion','the student doubt',3);if(!studentId||!data.students.some(s=>s.id===studentId)){notify('Please add and select a valid student.');return}if(!subject||!question)return;data.doubts.push({id:uid(),studentId,subject,question,status:'open',created:Date.now()});saveData();e.target.reset();closeForm('doubtFormPanel');renderAll();notify('Student doubt recorded.')});
+$('testForm').addEventListener('submit',e=>{e.preventDefault();const title=validText('testTitle','a test name'),subject=validText('testSubject','a subject'),date=validDate('testDate','test date');if(!title||!subject||!date)return;data.tests.push({id:uid(),title,subject,date,time:$('testTime').value,notes:$('testNotes').value.trim()});saveData();e.target.reset();closeForm('testFormPanel');renderAll();notify('Test scheduled successfully.')});
+['studentSearch','studentClassFilter'].forEach(id=>$(id).addEventListener('input',renderStudents));
+['homeworkSearch','homeworkFilter'].forEach(id=>$(id).addEventListener('input',renderHomework));
+['doubtSearch','doubtFilter'].forEach(id=>$(id).addEventListener('input',renderDoubts));
+['testSearch','testFilter'].forEach(id=>$(id).addEventListener('input',renderTests));
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.deleteStudent;if(id){const s=data.students.find(x=>x.id===id);if(!s)return;if(!confirm(`Remove ${s.name}? Their related homework assignments and doubts may show as unassigned/unknown.`))return;data.students=data.students.filter(x=>x.id!==id);data.homework=data.homework.map(h=>h.assignee===id?{...h,assignee:'all'}:h);saveData();renderAll();notify('Student removed.');return}
+const hid=b.dataset.toggleHomework;if(hid){const h=data.homework.find(x=>x.id===hid);if(h){h.status=h.status==='pending'?'completed':'pending';saveData();renderAll();notify('Homework status updated.')}return}
+const delhw=b.dataset.deleteHomework;if(delhw){if(!confirm('Delete this homework task?'))return;data.homework=data.homework.filter(x=>x.id!==delhw);saveData();renderAll();notify('Homework deleted.');return}
+const deld=b.dataset.deleteDoubt;if(deld){if(!confirm('Delete this doubt?'))return;data.doubts=data.doubts.filter(x=>x.id!==deld);saveData();renderAll();notify('Doubt deleted.');return}
+const delt=b.dataset.deleteTest;if(delt){if(!confirm('Delete this test?'))return;data.tests=data.tests.filter(x=>x.id!==delt);saveData();renderAll();notify('Test deleted.');return}
+});
+document.addEventListener('change',e=>{const id=e.target.dataset.doubtStatus;if(!id)return;const d=data.doubts.find(x=>x.id===id);if(d){d.status=e.target.value;saveData();renderAll();notify('Doubt status updated.')}});
+$('resetBtn').addEventListener('click',()=>{if(!confirm('Reset all ClassPulse demo data? Your changes in this browser will be replaced by the original sample data.'))return;data=demoData();saveData();['studentForm','homeworkForm','doubtForm','testForm'].forEach(id=>$(id).reset());['studentFormPanel','homeworkFormPanel','doubtFormPanel','testFormPanel'].forEach(closeForm);document.querySelectorAll('.search').forEach(el=>{if(el.tagName==='INPUT')el.value='';else el.selectedIndex=0});renderAll();notify('Demo data has been reset.')});
+$('exportBtn').addEventListener('click',()=>{try{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='classpulse-demo-backup.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Export started. Check your Downloads folder.')}catch(e){notify('Export failed in this browser. Try another browser.') }});
+data=loadData();renderAll();
+})();
+</script>
+</body>
+</html>
